@@ -1,0 +1,12 @@
+import pygame as pg
+from random import *
+
+class Circle(pg.sprite.Sprite):
+    def __init__(self, surf_list):
+        pg.sprite.Sprite.__init__(self)
+        self.image = choice(surf_list)
+        x = 100
+        y = 100
+        self.rect = self.image.get_rect(
+            bottomleft=(x, y))
+        self.r = 10
