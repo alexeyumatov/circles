@@ -1,0 +1,41 @@
+import pygame
+import sys
+import random
+from circles_config import *
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (125, 125, 125)
+LIGHT_BLUE = (64, 128, 255)
+GREEN = (0, 200, 64)
+YELLOW = (225, 225, 0)
+PINK = (230, 50, 230)
+FPS = 60
+W = 800
+H = 600
+
+
+pygame.init()
+sc = pygame.display.set_mode((W, H))
+clock = pygame.time.Clock()
+
+circ = pygame.draw.circle(sc, YELLOW, (x, y), r)
+
+cl = Circle()
+#circles = pg.sprite.Group()
+#circles.add(Circle)
+
+
+pygame.display.update()
+
+while True:
+    # задержка
+    clock.tick(FPS)
+
+    # цикл обработки событий
+    for i in pygame.event.get():
+        if i.type == pygame.QUIT:
+            sys.exit()
+    sc.fill(WHITE)
+
+    pygame.display.update()
